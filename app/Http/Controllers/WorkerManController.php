@@ -63,7 +63,7 @@ class WorkerManController extends BaseController
                 Gateway::sendToUid($uid, $message);
             break;
             case 'group':
-                // 向任意群组的网站页面发送数据
+                // 向任意群组的网站页面发送数据 
                 Gateway::sendToGroup($group_id, $message);
             break;
             default:
