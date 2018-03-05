@@ -63,7 +63,7 @@ class WorkerManController extends BaseController
                 Gateway::sendToUid($uid, $message);
             break;
             case 'group':
-                // 向任意群组的网站页面发送数据 
+                // 向任意群组的网站页面发送数据
                 Gateway::sendToGroup($group_id, $message);
             break;
             default:
@@ -71,17 +71,4 @@ class WorkerManController extends BaseController
         }
         return 1;
     }
-
-
-    public static function onClose($client_id)
-    {
-        Gateway::sendToAll($client_id);
-        // 向所有人发送
-//       $message=json_encode(array(
-//           'type'      => 'count',
-//           'message' => 10,
-//           'user_name'=>$user,
-//       ));
-    }
-
 }
