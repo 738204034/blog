@@ -29,7 +29,6 @@ class WorkerManController extends BaseController
         $group_id = '123';
         $client_id=$request->client_id;
         $request->user()->client_id=$request->client_id;
-//        Redis::set('key','123');
         Gateway::bindUid($client_id, $uid);
         Gateway::joinGroup($client_id, $group_id);
         $message_group=json_encode(array(
